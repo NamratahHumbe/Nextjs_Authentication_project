@@ -1,10 +1,9 @@
 "use client";
 import axios from "axios";
 import Link from "next/link";
-import React, {useState} from "react";
-import {toast} from "react-hot-toast";
-import {useRouter} from "next/navigation";
-
+import React, { useState } from "react";
+import { toast } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 export default function ProfilePage() {
     const router = useRouter()
@@ -31,7 +30,7 @@ export default function ProfilePage() {
             <h1>Profile</h1>
             <hr />
             <p>Profile page</p>
-            <h2 className="p-1 rounded bg-green-500">{data === 'nothing' ? "Nothing" : <Link href={`/profile/${data}`}>{data}
+            <h2 className="p-1 rounded bg-green-500">{data === 'nothing' ? "" : <Link href={`/profile/${data}`}>{data}
             </Link>}</h2>
         <hr />
         <button
@@ -43,7 +42,6 @@ export default function ProfilePage() {
         onClick={getUserDetails}
         className="bg-green-800 mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         >GetUser Details</button>
-
 
             </div>
     )
